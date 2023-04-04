@@ -1,19 +1,58 @@
 import { useEffect, useState } from "react";
 import { BiHomeAlt, BiMoon, BiSun } from "react-icons/bi";
-import { GiCamel } from "react-icons/gi";
+import { GiCamel, GiCamelHead } from "react-icons/gi";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { navVariants } from "@/constants/motionVariants";
-import { IoServerOutline } from "react-icons/io5";
-import {VscSettings} from "react-icons/vsc"
+import { IoServerOutline, IoStatsChartSharp } from "react-icons/io5";
+import { VscSettings } from "react-icons/vsc";
+import { Tooltip } from "../client/material-tailwind";
+import { RiTeamFill } from "react-icons/ri";
+import { HiMail } from "react-icons/hi";
 
 const navItems = [
-  { id: 1, name: "Home", href: "/", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
-  { id: 2, name: "About", href: "/about", icon: <IoServerOutline className="w-5 h-5 text-gray-100" /> },
-  { id: 3, name: "Ico", href: "/ico", icon: <VscSettings className="w-5 h-5 text-gray-100" /> },
-  { id: 4, name: "Page 4", href: "/page4", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
-  { id: 5, name: "Page 5", href: "/page5", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
-  { id: 6, name: "Page 6", href: "/page6", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
+  {
+    id: 1,
+    name: "Camelcoin.io",
+    href: "/",
+    icon: <BiHomeAlt className="w-5 h-5 text-gray-100" />,
+  },
+  {
+    id: 2,
+    name: "About",
+    href: "/about",
+    icon: <GiCamel className="w-5 h-5 text-gray-100" />,
+  },
+  {
+    id: 3,
+    name: "Ico",
+    href: "/ico",
+    icon: <VscSettings className="w-5 h-5 text-gray-100" />,
+  },
+  {
+    id: 4,
+    name: "Hump",
+    href: "/hump",
+    icon: <GiCamelHead className="w-5 h-5 text-gray-100" />,
+  },
+  {
+    id: 5,
+    name: "Satats",
+    href: "/stats",
+    icon: <IoStatsChartSharp className="w-5 h-5 text-gray-100" />,
+  },
+  {
+    id: 6,
+    name: "Team",
+    href: "/team",
+    icon: <RiTeamFill className="w-5 h-5 text-gray-100" />,
+  },
+  {
+    id: 7,
+    name: "Contact",
+    href: "/contact",
+    icon: <HiMail className="w-5 h-5 text-gray-100" />,
+  },
 ];
 
 const Navbar = () => {
@@ -132,25 +171,27 @@ const Navbar = () => {
               >
                 {navItems.map((item, index) => (
                   <Link key={item.id} href={item.href}>
-                    <motion.button
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.8 }}
-                      className="absolute flex items-center justify-center rounded-full h-16 w-16 font-semibold cursor-pointer bg-camel-600 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]"
-                      style={{
-                        left: `${
-                          Math.sin((index / navItems.length) * Math.PI * 2) *
-                            120 +
-                          120
-                        }px`,
-                        top: `${
-                          Math.cos((index / navItems.length) * Math.PI * 2) *
-                            120 +
-                          120
-                        }px`,
-                      }}
-                    >
-                      {item.icon}
-                    </motion.button>
+                    <Tooltip className="mb-4" content={item.name}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.8 }}
+                        className="absolute flex items-center justify-center rounded-full h-16 w-16 font-semibold cursor-pointer bg-camel-600 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]"
+                        style={{
+                          left: `${
+                            Math.sin((index / navItems.length) * Math.PI * 2) *
+                              120 +
+                            120
+                          }px`,
+                          top: `${
+                            Math.cos((index / navItems.length) * Math.PI * 2) *
+                              120 +
+                            120
+                          }px`,
+                        }}
+                      >
+                        {item.icon}
+                      </motion.button>
+                    </Tooltip>
                   </Link>
                 ))}
               </motion.div>

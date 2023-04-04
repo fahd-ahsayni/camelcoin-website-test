@@ -27,6 +27,9 @@ const ProgressBar = ({ progress, bg }) => {
       <motion.div
         className={`progress-bar ${bg}`}
         variants={barVariants}
+        transition={{
+          duration: 1
+        }}
       />
     </motion.div>
   );
