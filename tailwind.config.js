@@ -45,32 +45,54 @@ module.exports = withMT({
         "white-dark": "#c7c7c7",
         "primary-dark": "#0d1117",
         "secondary-dark": "#1A232E",
-        'camel': {
-          100: '#FDF8EF',
-          200: '#FBF2DE',
-          300: '#F7E4BE',
-          400: '#F4D79D',
-          500: '#F0C97D',
-          600: '#EAB54C',
-          700: '#C48A17',
-          800: '#A37313',
-          900: '#825C0F',
-          1000: '#62450B'
+        camel: {
+          100: "#FDF8EF",
+          200: "#FBF2DE",
+          300: "#F7E4BE",
+          400: "#F4D79D",
+          500: "#F0C97D",
+          600: "#EAB54C",
+          700: "#C48A17",
+          800: "#A37313",
+          900: "#825C0F",
+          1000: "#62450B",
         },
-        'brown': {
-          50: '#FDF8EF',
-          100: '#FBF2DE',
-          200: '#F7E4BE',
-          300: '#F4D79D',
-          400: '#F0C97D',
-          500: '#EAB54C',
-          600: '#C48A17',
-          700: '#A37313',
-          800: '#825C0F',
-          900: '#62450B'
+        brown: {
+          50: "#FDF8EF",
+          100: "#FBF2DE",
+          200: "#F7E4BE",
+          300: "#F4D79D",
+          400: "#F0C97D",
+          500: "#EAB54C",
+          600: "#C48A17",
+          700: "#A37313",
+          800: "#825C0F",
+          900: "#62450B",
+        },
+        animation: {
+          text: "text 5s ease infinite",
+        },
+        animation: {
+          text: "text 5s ease infinite",
+        },
+        keyframes: {
+          text: {
+            "0%, 100%": {
+              "background-size": "200% 200%",
+              "background-position": "left center",
+            },
+            "50%": {
+              "background-size": "200% 200%",
+              "background-position": "right center",
+            },
+          },
         },
       },
     },
   },
-  plugins: [require("daisyui"),  require('tailwind-scrollbar'), require('tailwindcss-animated')],
+  plugins: [
+    require("daisyui"),
+    require("tailwind-scrollbar"),
+    require("tailwindcss-animated"),
+  ],
 });

@@ -9,14 +9,14 @@ import logo6 from "@/assets/part6.png";
 export default function LogoCloud() {
   return (
     <>
-      <div className="flex flex-col items-center overflow-hidden dark:bg-[#0d1117] bg-blue-gray-50 py-32">
+      <div className="flex flex-col mt-10 items-center w-screen">
         <div className="container relative z-[1] m-auto px-6 md:px-8">
           <div className="m-auto text-center md:w-8/12 lg:w-6/12">
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+            <h2 className="text-xl font-bold text-gray-800 dark:text-white md:text-2xl">
               Our Strategic <span className="text-camel-600">Partnerships</span>
             </h2>
           </div>
-          <div className="m-auto mt-16 md:w-11/12 lg:w-8/12 xl:w-7/12">
+          <div className="m-auto mt-4 md:w-11/12 lg:w-8/12 xl:w-7/12">
             <div className="flex flex-wrap justify-center gap-6">
               <div className="group rounded-xl border border-blue-gray-200 dark:border-gray-600 bg-white bg-opacity-5 py-2 px-4 hover:bg-opacity-10">
                 <Image

@@ -1,15 +1,27 @@
 import { useEffect, useState } from "react";
-import { BiMoon, BiSun } from "react-icons/bi";
+import { BiHomeAlt, BiMoon, BiSun } from "react-icons/bi";
 import { GiCamel } from "react-icons/gi";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import LogoIconDark from "../assets/logo_icon.png";
-import LogoIconLight from "../assets/logo_icon_light.png";
-import { Button } from "@material-tailwind/react";
 import { navVariants } from "@/constants/motionVariants";
+import { IoServerOutline } from "react-icons/io5";
+import {VscSettings} from "react-icons/vsc"
+
+const navItems = [
+  { id: 1, name: "Home", href: "/", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
+  { id: 2, name: "About", href: "/about", icon: <IoServerOutline className="w-5 h-5 text-gray-100" /> },
+  { id: 3, name: "Ico", href: "/ico", icon: <VscSettings className="w-5 h-5 text-gray-100" /> },
+  { id: 4, name: "Page 4", href: "/page4", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
+  { id: 5, name: "Page 5", href: "/page5", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
+  { id: 6, name: "Page 6", href: "/page6", icon: <BiHomeAlt className="w-5 h-5 text-gray-100" /> },
+];
 
 const Navbar = () => {
+  const [showLinks, setShowLinks] = useState(false);
+
+  const toggleLinks = () => {
+    setShowLinks(!showLinks);
+  };
   // State for dark mode and whether to show navbar
   const [darkMode, setDarkMode] = useState("light");
   const [showNavbar, setShowNavbar] = useState(false);
@@ -86,8 +98,8 @@ const Navbar = () => {
           }}
           className="dropdown"
         >
-          <label
-            tabIndex={0}
+          <button
+            onClick={toggleLinks}
             className="btn btn-ghost btn-circle dark:hover:bg-black/10"
           >
             <svg
@@ -104,28 +116,46 @@ const Navbar = () => {
                 d="M4 6h16M4 12h16M4 18h7"
               />
             </svg>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 dark:bg-primary-dark-light dark:shadow-2xl"
-          >
-            <li>
-              <Link
-                href="#"
-                className="dark:text-gray-200 hover:dark:bg-neutral"
+          </button>
+          {showLinks && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className=""
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                className="absolute h-64 w-64 rounded-full flex justify-center items-center"
               >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#qui_nous_sommes"
-                className="dark:text-gray-200 hover:dark:bg-neutral"
-              >
-                services
-              </Link>
-            </li>
-          </ul>
+                {navItems.map((item, index) => (
+                  <Link key={item.id} href={item.href}>
+                    <motion.button
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.8 }}
+                      className="absolute flex items-center justify-center rounded-full h-16 w-16 font-semibold cursor-pointer bg-camel-600 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]"
+                      style={{
+                        left: `${
+                          Math.sin((index / navItems.length) * Math.PI * 2) *
+                            120 +
+                          120
+                        }px`,
+                        top: `${
+                          Math.cos((index / navItems.length) * Math.PI * 2) *
+                            120 +
+                          120
+                        }px`,
+                      }}
+                    >
+                      {item.icon}
+                    </motion.button>
+                  </Link>
+                ))}
+              </motion.div>
+            </motion.div>
+          )}
         </motion.div>
       </div>
       <div className="navbar-center md:block hidden">
@@ -158,44 +188,6 @@ const Navbar = () => {
             <BiSun className="h-5 w-5 text-gray-100" />
           )}
         </button>
-        <span className="btn btn-ghost btn-circle dark:hover:bg-black/10">
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle">
-              <div className="indicator">
-                <Image
-                  src={darkMode === "light" ? LogoIconLight : LogoIconDark}
-                  alt="logo camelcoin"
-                  className="w-5 h-[22px]"
-                />
-                <span className="badge badge-sm badge-warning text-black indicator-item">
-                  8
-                </span>
-              </div>
-            </label>
-            <div
-              tabIndex={0}
-              className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
-            >
-              <div className="card-body dark:bg-primary-dark-light dark:shadow-2xl rounded-md">
-                <span className="font-bold text-lg text-gray-900 dark:text-gray-100">
-                  8 Items
-                </span>
-                <span className="text-yellow-700 dark:text-yellow-500">
-                  Subtotal: $999
-                </span>
-                <div className="card-actions">
-                  <Button
-                    variant="gradient"
-                    color="yellow"
-                    className="btn-block"
-                  >
-                    Buy Now
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </span>
       </motion.div>
     </motion.div>
   );

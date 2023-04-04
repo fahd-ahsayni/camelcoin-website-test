@@ -13,10 +13,10 @@ const navigation = [
   { name: "Company", href: "#" },
 ];
 
-export default function Header({ children }) {
+export default function Header() {
   return (
-    <div>
-      <div className="relative overflow-hidden isolate px-6 pt-8 pb-16 lg:px-8 dark:bg-[#0d1117]">
+    <>
+      <div className="relative overflow-hidden isolate px-6 pt-8 pb-16 lg:px-8">
         <div className="w-full  h-72 bg-gradient-to-b from-transparent dark:to-[#0d1117] dark:via-[#0d1117] to-blue-gray-50 via-blue-gray-50 -z-[100] absolute -bottom-24 left-0" />
         <div className="w-[3000px] absolute top-0 h-72 left-0 bg-gradient-to-b dark:from-black from-blue-gray-50 to-transparent" />
         <div className="">
@@ -141,7 +141,6 @@ export default function Header({ children }) {
           }}
         />
       </div>
-      {children}
-    </div>
+    </>
   );
 }
