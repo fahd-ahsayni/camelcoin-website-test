@@ -17,11 +17,11 @@ module.exports = withMT({
     themes: [
       {
         mytheme: {
-          primary: "#ffb300",
+          primary: "#fbbb04",
 
-          secondary: "#F000B8",
+          secondary: "#7d5c04",
 
-          accent: "#37CDBE",
+          accent: "#715404",
 
           neutral: "#3D4451",
 
@@ -45,6 +45,30 @@ module.exports = withMT({
         "white-dark": "#c7c7c7",
         "primary-dark": "#0d1117",
         "secondary-dark": "#1A232E",
+        'camel': {
+          100: '#FDF8EF',
+          200: '#FBF2DE',
+          300: '#F7E4BE',
+          400: '#F4D79D',
+          500: '#F0C97D',
+          600: '#EAB54C',
+          700: '#C48A17',
+          800: '#A37313',
+          900: '#825C0F',
+          1000: '#62450B'
+        },
+        'brown': {
+          50: '#FDF8EF',
+          100: '#FBF2DE',
+          200: '#F7E4BE',
+          300: '#F4D79D',
+          400: '#F0C97D',
+          500: '#EAB54C',
+          600: '#C48A17',
+          700: '#A37313',
+          800: '#825C0F',
+          900: '#62450B'
+        },
       },
     },
   },

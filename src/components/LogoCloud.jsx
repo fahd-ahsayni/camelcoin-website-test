@@ -13,7 +13,7 @@ export default function LogoCloud() {
         <div className="container relative z-[1] m-auto px-6 md:px-8">
           <div className="m-auto text-center md:w-8/12 lg:w-6/12">
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-              Our Strategic <span className="dark:text-amber-500 text-amber-600">Partnerships</span>
+              Our Strategic <span className="text-camel-600">Partnerships</span>
             </h2>
           </div>
           <div className="m-auto mt-16 md:w-11/12 lg:w-8/12 xl:w-7/12">

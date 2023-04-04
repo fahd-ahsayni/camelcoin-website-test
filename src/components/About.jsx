@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Legacy from "@/assets/image.webp";
+import Legacy from "@/assets/about.png";
 import { Button } from "@/client/material-tailwind";
 import { motion } from "framer-motion";
 
@@ -23,13 +23,13 @@ export default function About() {
               />
             </motion.div>
           </div>
-          <div className="relative flex items-center bg-gray-100 dark:bg-black shadow-xl">
-            <span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100 lg:dark:bg-black" />
+          <div className="relative flex items-center bg-gray-100 dark:bg-primary-dark-light shadow-xl">
+            <span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100 lg:dark:bg-primary-dark-light" />
             <div className="absolute w-full h-full flex justify-center items-start">
               {/* <Image src={Legacy} className="opacity-50 lg:-ml-16 -ml-12" alt="camelcoin legacy background"/> */}
             </div>
             <div className="p-8 sm:p-16 lg:p-24 z-[999]">
-              <h3 className="dark:text-yellow-500 text-yellow-700 font-semibold tracking-wider">
+              <h3 className="text-camel-600 text-lg font-semibold tracking-wider">
                 A Fulfilled Ecosystem
               </h3>
               <h2 className="text-2xl font-bold sm:text-3xl dark:text-gray-50 text-gray-900">
@@ -66,20 +66,20 @@ export default function About() {
                 </span>
               </span>
               <div className="flex flex-col md:flex-row items-center justify-start space-x-0 md:space-y-0 md:space-x-6 space-y-4 mt-8">
-                <Button color="yellow" variant="gradient" className="btn-block">
+                <button className="btn-block inline-block font-semibold rounded cursor-pointer bg-camel-600 px-6 pt-2.5 pb-2 text-xs uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]">
                   project whitepaper
-                </Button>
-                <Button color="yellow" variant="gradient" className="btn-block">
+                </button>
+                <button className="btn-block inline-block font-semibold rounded cursor-pointer bg-camel-600 px-6 pt-2.5 pb-2 text-xs uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]">
                   blockchaine
-                </Button>
+                </button>
               </div>
               <div className="flex flex-col md:flex-row items-center justify-start mt-4 md:mt-3 space-x-0 md:space-y-0 space-y-4 md:space-x-6">
-                <Button color="yellow" variant="gradient" className="btn-block">
+                <button className="btn-block inline-block font-semibold rounded cursor-pointer bg-camel-600 px-6 pt-2.5 pb-2 text-xs uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]">
                   project greenpaper
-                </Button>
-                <Button color="yellow" variant="text" className="btn-block">
+                </button>
+                <button className="btn-block inline-block font-semibold rounded cursor-pointer bg-camel-600 px-6 pt-2.5 pb-2 text-xs uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]">
                   camelcoin pitch deck
-                </Button>
+                </button>
               </div>
             </div>
           </div>

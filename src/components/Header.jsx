@@ -1,10 +1,10 @@
 import { Button } from "@/client/material-tailwind";
-import { GiCamel } from "react-icons/gi";
 import LogoIcon from "../assets/logo.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Modal from "@/shared/Modal";
 import Legacy from "../assets/legacy.png";
+import { BsPlayCircle } from "react-icons/bs";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -16,23 +16,17 @@ const navigation = [
 export default function Header({ children }) {
   return (
     <div>
-      <div className="relative isolate px-6 pt-8 lg:px-8 dark:bg-[#0d1117]">
-        <div className="w-full h-72 bg-gradient-to-b from-transparent dark:to-[#0d1117] dark:via-[#0d1117] to-blue-gray-50 via-blue-gray-50 -z-[100] absolute -bottom-24 left-0" />
+      <div className="relative overflow-hidden isolate px-6 pt-8 pb-16 lg:px-8 dark:bg-[#0d1117]">
+        <div className="w-full  h-72 bg-gradient-to-b from-transparent dark:to-[#0d1117] dark:via-[#0d1117] to-blue-gray-50 via-blue-gray-50 -z-[100] absolute -bottom-24 left-0" />
         <div className="w-[3000px] absolute top-0 h-72 left-0 bg-gradient-to-b dark:from-black from-blue-gray-50 to-transparent" />
-        <div className="absolute z-[-999] w-full h-full flex justify-center items-start">
-          <Image
-            src={Legacy}
-            className="opacity-20 dark:opacity-30 lg:-ml-16 -ml-12"
-            alt="camelcoin legacy background"
-          />
-          {/* <div
-            className="w-full h-full opacity-50 lg:-ml-16 -ml-12"
-            style={{
-              backgroundImage: `url(
-                "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2378909c' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"
-              )`,
-            }}
-          /> */}
+        <div className="">
+          <div className="absolute z-[-999] w-full flex justify-center items-start">
+            <Image
+              src={Legacy}
+              className="opacity-20 w-full object-cover dark:opacity-50 lg:-ml-16 -ml-12"
+              alt="camelcoin legacy background"
+            />
+          </div>
         </div>
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -50,10 +44,7 @@ export default function Header({ children }) {
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 dark:text-gray-300 text-gray-700 ring-1 dark:ring-gray-400/10 ring-gray-800/10 hover:dark:ring-gray-300/20 hover:ring-gray-700/20 bg-gray-200/50 dark:bg-white-dark/10">
               Welcome To Fairtrade Revolution.{" "}
-              <a
-                href="#"
-                className="font-semibold dark:text-yellow-500 text-yellow-700"
-              >
+              <a href="#" className="font-semibold text-camel-600">
                 <span className="absolute inset-0" aria-hidden="true" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
@@ -82,27 +73,73 @@ export default function Header({ children }) {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <label
                 htmlFor="my-modal-3"
-                className="cursor-pointer px-8 py-3 uppercase font-semibold text-[13px] text-center text-white transition hover:scale-105 duration-300 rounded-lg hover:shadow-xl ease bg-gradient-to-tr from-[#cd9c3f] to-[#a54b1e] md:w-auto"
+                className="inline-block font-semibold rounded cursor-pointer bg-camel-600 px-6 pt-2.5 pb-2 text-xs uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-camel-700 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-camel-700 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]"
               >
                 Buy Camelcoin Now !
               </label>
-              
-              <Modal />
+              <label
+                htmlFor="my-modal-2"
+                className="btn btn-ghost space-x-4 dark:text-gray-300"
+              >
+                <span>Watch video</span>
+                <BsPlayCircle className="w-8 h-8" />
+              </label>
+
+              <Modal idModel="my-modal-3">
+                <div className="mockup-window border bg-base-300">
+                  <div className="flex justify-center px-4 py-16 bg-blue-gray-50">
+                    <div className="flex flex-col px-12 items-center justify-center space-y-4">
+                      <Button
+                        variant="gradient"
+                        color="orange"
+                        className="btn-block"
+                      >
+                        Buy Camelcoin on XT.com
+                      </Button>
+                      <Button
+                        variant="gradient"
+                        color="blue"
+                        className="btn-block"
+                      >
+                        Buy Now on cameleader
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </Modal>
+              <Modal idModel="my-modal-2">
+                <div className="mockup-window border bg-base-300">
+                  <div className="flex justify-center p-4 bg-blue-gray-50">
+                    <div
+                      className="embed-responsive embed-responsive-16by9 relative w-full overflow-hidden"
+                      style={{ paddingTop: "56.25%" }}
+                    >
+                      <iframe
+                        className="embed-responsive-item rounded-md absolute top-0 right-0 bottom-0 left-0 h-full w-full"
+                        src="https://www.youtube.com/embed/ppajh0EQ38s"
+                        allowFullScreen=""
+                        data-gtm-yt-inspected-2340190_699="true"
+                        id={240632615}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Modal>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true"
+      >
         <div
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#f1ab29] via-[#b57f1c]/50 to-[#f7c110] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-          />
-        </div>
+          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#f1ab29] via-[#b57f1c]/50 to-[#f7c110] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+        />
       </div>
       {children}
     </div>

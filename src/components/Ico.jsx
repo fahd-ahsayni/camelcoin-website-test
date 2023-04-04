@@ -51,7 +51,7 @@ export default function Ico() {
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-50 sm:text-4xl">
           Reason For The Success Of{" "}
-          <span className="text-yellow-700 dark:text-yellow-500">
+          <span className="text-camel-600">
             Camelcoin
           </span>{" "}
           Crypto-Economy
@@ -68,7 +68,7 @@ export default function Ico() {
                 <div className="flow-root w-full h-full rounded-lg bg-gray-50 dark:bg-primary-dark-light px-6 pb-8">
                   <div className="-mt-6">
                     <div>
-                      <span className="inline-flex items-center justify-center rounded-md bg-gradient-to-br from-yellow-800 via-yellow-700 to-yellow-500 p-3 shadow-lg">
+                      <span className="inline-flex items-center justify-center rounded-md bg-gradient-to-br from-camel-700 via-camel-600 to-camel-600 p-3 shadow-lg">
                         <feature.icon
                           className="h-6 w-6 text-white"
                           aria-hidden="true"

@@ -10,7 +10,7 @@ export default function Team() {
       <div className="xl:container mx-auto px-6 md:px-12">
         <div className="mb-16 md:w-2/3 lg:w-1/2">
           <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-            Meet our <span className="text-yellow-700 dark:text-yellow-500">Incredible Team</span>
+            Meet our <span className="text-camel-600">Incredible Team</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300">
             camelcoin prides itself not only on award-winning technology, but
@@ -28,7 +28,7 @@ export default function Team() {
               width={640}
               height={805}
             />
-            <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
+            <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 dark:bg-black/90 backdrop-blur translate-y-24">
               <div>
                 <h4 className="text-xl font-semibold dark:text-gray-700 text-white">
                   Issa Jeremy Vector
@@ -50,7 +50,7 @@ export default function Team() {
               width={640}
               height={805}
             />
-            <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
+            <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 translate-y-24 dark:bg-black/90 backdrop-blur">
               <div>
                 <h4 className="text-xl font-semibold dark:text-gray-700 text-white">
                   Reda EL BAKRAOUY
