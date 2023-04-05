@@ -59,7 +59,15 @@ export default function Home() {
             </div>
             <div className="text-center">
               <h1 className="text-4xl font-bold drop-shadow-2xl tracking-tight dark:text-white text-gray-900 sm:text-6xl">
-                The CamelCoin Project
+                The{" "}
+                <span
+                  className="bg-clip-text text-transparent bg-gradient-to-r 
+        from-[#f9e071] via-[#e6c456] to-[#a67529] 
+        animate-gradient drop-shadow-2xl"
+                >
+                  CamelCoin
+                </span>{" "}
+                Project
               </h1>
               <p className="mt-6 text-lg leading-8 dark:text-gray-300 text-gray-700">
                 Join the decentralized finance revolution with Camelcoin - the

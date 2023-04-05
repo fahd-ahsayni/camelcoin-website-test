@@ -1,0 +1,52 @@
+.navbar {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease;
+  }
+  
+  .navbar.spin {
+    transform: rotateY(360deg);
+  }
+  
+  .navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    font-weight: bold;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-spin-button {
+    margin-right: 20px;
+  }
+  
+  .navbar-content {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }

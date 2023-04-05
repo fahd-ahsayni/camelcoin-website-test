@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 gradient-01 {
   background-image: linear-gradient(
     270deg,
@@ -143,4 +151,21 @@ gradient-01 {
 
 .progress-bar {
   height: 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 3s ease-in-out infinite;
 }
