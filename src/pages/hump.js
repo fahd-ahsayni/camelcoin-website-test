@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function TheHump() {
   return (
-    <main className="bg-blue-gray-50 dark:bg-[#0d1117] md:overflow-y-hidden overflow-y-auto overflow-x-hidden">
+    <main className="bg-blue-gray-50 dark:bg-[#0d1117] w-screen h-screen flex items-center justify-center md:overflow-y-hidden overflow-y-auto overflow-x-hidden">
       <section className="2xl:py-20">
         <div className="px-4 mx-auto overflow-hidden bg-gradient-to-tr from-[#cd9c3f] via-[#cd9c3f] to-[#a54b1e] max-w-7xl sm:px-6 lg:px-8 shadow-lg rounded-lg">
           <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">

@@ -27,11 +27,11 @@ const teamMembers = [
 
 function TeamMembers() {
   return (
-    <main className="bg-blue-gray-50 dark:bg-[#0d1117] md:overflow-y-hidden overflow-y-auto overflow-x-hidden h-screen w-screen" >
+    <main className="bg-blue-gray-50 dark:bg-[#0d1117] overflow-x-hidden h-screen w-screen flex items-center justify-center" >
       <section className="py-10 mt-8 sm:py-16 lg:py-24">
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold leading-tight text-black">
               Meet the brains
             </h2>
             <p className="max-w-md mx-auto mt-4 text-base leading-relaxed text-gray-600">

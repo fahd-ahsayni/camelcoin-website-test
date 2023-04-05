@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Stats() {
   return (
-    <section className="bg-blue-gray-50 dark:bg-[#0d1117] md:overflow-y-hidden overflow-y-auto overflow-x-hidden">
+    <section className="bg-blue-gray-50 dark:bg-[#0d1117] h-screen w-screen flex justify-center items-center overflow-x-hidden">
       <div className="py-1 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-2xl mx-auto text-center">
