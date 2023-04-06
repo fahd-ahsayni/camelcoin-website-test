@@ -1,72 +1,97 @@
-import Image from "next/image";
-import TheHumpImage from "../assets/theHump.jpg";
-import legacy from "../assets/legacy.png";
-import { motion } from "framer-motion";
+import TheHump1 from "@/shared/TheHump1";
+import TheHump2 from "@/shared/TheHump2";
+import TheHump3 from "@/shared/TheHump3";
+import { useEffect, useState } from "react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 export default function TheHump() {
+  const [activeComponentIndex, setActiveComponentIndex] = useState(0);
+
+  function handleSwipeRight() {
+    if (activeComponentIndex > 0) {
+      setActiveComponentIndex(activeComponentIndex - 1);
+    }
+  }
+
+  function handleSwipeLeft() {
+    if (activeComponentIndex < 2) {
+      setActiveComponentIndex(activeComponentIndex + 1);
+    } else {
+      setActiveComponentIndex(0);
+    }
+  }
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (activeComponentIndex < 2) {
+        setActiveComponentIndex(activeComponentIndex + 1);
+      } else {
+        setActiveComponentIndex(0);
+      }
+    }, 7500);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [activeComponentIndex]);
+
   return (
-    <main className="bg-blue-gray-50 dark:bg-[#0d1117] w-screen h-screen flex items-center justify-center md:overflow-y-hidden overflow-y-auto overflow-x-hidden">
-      <section className="2xl:py-20">
-        <div className="px-4 mx-auto overflow-hidden bg-gradient-to-tr from-[#cd9c3f] via-[#cd9c3f] to-[#a54b1e] max-w-7xl sm:px-6 lg:px-8 shadow-lg rounded-lg">
-          <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">
-            <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
-              <div>
-                <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight">
-                  One Wallet App For Order, Tracking & NFTs
-                </h2>
-                <p className="mt-4 text-base text-gray-50">
-                  From the Hump Wallet App, center of the system, you can order
-                  and track your products from anywhere at anytime. Valuables
-                  will be also securised with NFT acts of property. NEW!!! NFT
-                  sponsorship You can own and sponsor your own ethical entities
-                  from your wallet. First camels from isolated areas but also
-                  hives, trees and even rare animals to fight against illegal
-                  traffic.
-                </p>
-                <div className="flex flex-row items-center mt-8 space-x-4 lg:mt-12">
-                  <a href="#" title="" className="flex" role="button">
-                    <img
-                      className="w-auto h-14"
-                      src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/8/btn-app-store.svg"
-                      alt=""
-                    />
-                  </a>
-                  <a href="#" title="" className="flex" role="button">
-                    <img
-                      className="w-auto h-14"
-                      src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/8/btn-play-store.svg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="relative flex justify-center items-center w-full px-12">
-                <svg
-                  className="absolute inset-x-0 bottom-0 left-1/2 -translate-x-1/2 -mb-48 lg:-mb-72 text-[#f6cc4d] w-[460px] h-[460px] sm:w-[600px] sm:h-[600px]"
-                  fill="currentColor"
-                  viewBox="0 0 8 8"
-                >
-                  <circle cx={4} cy={4} r={3} />
-                </svg>
-                <motion.div initial={{y:400}} animate={{y:0}} transition={{duration: 0.5}} className="">
-                  <div className="mockup-phone relative -mb-32 lg:-mb-52">
-                    <div className="camera"></div>
-                    <div className="display">
-                      <div className="artboard artboard-demo phone-1">
-                        <Image
-                          className="w-full h-full"
-                          src={TheHumpImage}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+    <section className="bg-blue-gray-50 dark:bg-[#0d1117] h-screen w-screen flex items-center justify-center overflow-y-auto overflow-x-hidden">
+      <div>
+        <div
+          onTouchStart={(event) => {
+            const touchStartX = event.touches[0].clientX;
+            event.currentTarget.addEventListener(
+              "touchmove",
+              (event) => {
+                const touchEndX = event.touches[0].clientX;
+                const deltaX = touchStartX - touchEndX;
+                if (deltaX > 50) {
+                  handleSwipeLeft();
+                } else if (deltaX < -50) {
+                  handleSwipeRight();
+                }
+              },
+              { passive: true }
+            );
+          }}
+          onTouchEnd={(event) => {
+            event.currentTarget.removeEventListener("touchmove", () => {}, {
+              passive: true,
+            });
+          }}
+        >
+          {activeComponentIndex === 0 && <TheHump1 />}
+          {activeComponentIndex === 1 && (
+            <div className="w-screen flex items-center justify-center">
+              <TheHump2 />
             </div>
+          )}
+          {activeComponentIndex === 2 && (
+            <div className="w-screen flex items-center justify-center">
+              <TheHump3 />
+            </div>
+          )}
+        </div>
+        <div className="fixed inset-0 flex items-center">
+          <div className="absolute lg:left-16 ml-4">
+            <button
+              className="bg-gray-50/70 backdrop-blur-sm flex justify-center items-center h-14 w-14 shadow-xl rounded-full"
+              onClick={handleSwipeRight}
+            >
+              <AiOutlineLeft className="w-8 h-8 text-gray-900 dark:text-camel-700" />
+            </button>
+          </div>
+          <div className="absolute right-16 mr-4">
+            <button
+              className="bg-gray-50/70 backdrop-blur-sm flex justify-center items-center h-14 w-14 shadow-xl rounded-full"
+              onClick={handleSwipeLeft}
+            >
+              <AiOutlineRight className="w-8 h-8 text-gray-900 dark:text-camel-700" />
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }

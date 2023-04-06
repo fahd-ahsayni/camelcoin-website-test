@@ -4,7 +4,7 @@ import { GiCamel, GiCamelHead } from "react-icons/gi";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { navVariants } from "@/constants/motionVariants";
-import { IoServerOutline, IoStatsChartSharp } from "react-icons/io5";
+import { IoStatsChartSharp } from "react-icons/io5";
 import { VscSettings } from "react-icons/vsc";
 import { Tooltip } from "../client/material-tailwind";
 import { RiTeamFill } from "react-icons/ri";
@@ -116,11 +116,7 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`navbar rounded-lg ${
-        showNavbar
-          ? "backdrop-blur shadow-sm dark:shadow-md bg-white/70 dark:bg-[#0d1117]/70"
-          : "bg-transparent"
-      }`}
+      className="navbar md:px-16 px-16 "
     >
       <div className="navbar-start">
         <motion.div
@@ -171,7 +167,6 @@ const Navbar = () => {
               >
                 {navItems.map((item, index) => (
                   <Link key={item.id} href={item.href}>
-                    <Tooltip className="mb-4" content={item.name}>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
@@ -191,7 +186,6 @@ const Navbar = () => {
                       >
                         {item.icon}
                       </motion.button>
-                    </Tooltip>
                   </Link>
                 ))}
               </motion.div>

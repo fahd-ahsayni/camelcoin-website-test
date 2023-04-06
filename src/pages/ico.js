@@ -44,14 +44,21 @@ const features = [
 
 export default function Ico() {
   return (
-    <section className="bg-blue-gray-50 dark:bg-[#0d1117] h-screen w-screen flex items-center justify-center overflow-y-auto overflow-x-hidden">
+    <section className="bg-blue-gray-50 z-[0] dark:bg-[#0d1117] h-screen w-screen flex items-center justify-center overflow-y-auto overflow-x-hidden">
+      <div
+        className="absolute opacity-30 inset-0 blur-[118px] max-w-lg h-[800px] mx-auto sm:max-w-3xl sm:h-[400px]"
+        style={{
+          background:
+            "linear-gradient(106.89deg, #f9e071 15.73%, #e6c456 15.74%, #a54b1e 56.49%, rgba(79, 70, 229, 0.4) 115.91%)",
+        }}
+      />
       <div className="relative mt-32 py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-50 sm:text-4xl">
             Reason For The Success Of{" "}
             <span className="text-camel-600">Camelcoin</span> Crypto-Economy
           </p>
-          <p className="mx-auto mt-5 max-w-prose text-gray-500 dark:text-gray-300">
+          <p className="mx-auto mt-5 max-w-prose text-gray-600 dark:text-gray-300">
             Our economic system relies on supply and demand, Camelcoin{"'"}s
             business model aims to expand its customer base, By managing its
             services and users, the value of Camelcoin elevates.

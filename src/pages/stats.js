@@ -2,14 +2,22 @@ import ProgressBar from "@/shared/ProgressBar";
 import StatsHeader from "@/shared/StatsHeader";
 import Legacy from "../assets/legacy2.png";
 import Image from "next/image";
+import CoinMarketCapWidget from "@/shared/CoinMarketCapWidget";
 
 
 export default function Stats() {
   return (
-    <section className="bg-blue-gray-50 dark:bg-[#0d1117] h-screen w-screen flex justify-center items-center overflow-x-hidden">
-      <div className="py-1 sm:py-16 lg:py-24">
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-2xl mx-auto text-center">
+    <section className="bg-blue-gray-50 dark:bg-[#0d1117] h-screen w-screen flex flex-col justify-center items-center overflow-x-hidden">
+      <div className="py-1 mt-[480px] sm:py-16 lg:py-24">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8">
+        <div
+        className="absolute z-[0] opacity-30 inset-0 blur-[118px] max-w-lg h-[800px] mx-auto sm:max-w-3xl sm:h-[400px]"
+        style={{
+          background:
+            "linear-gradient(106.89deg, rgba(192, 132, 252, 0.11) 15.73%, #e6c456 15.74%, #a54b1e 115.91%)",
+        }}
+      />
+          <div className="max-w-2xl z-[109] mx-auto text-center">
             <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
               Tokenomics chart
             </h2>
@@ -117,6 +125,7 @@ export default function Stats() {
           </section>
         </div>
       </div>
+      <CoinMarketCapWidget />
     </section>
   );
 }
